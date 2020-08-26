@@ -15,8 +15,6 @@ import java.util.*;
 @SessionAttributes("tList")
 public class MainController {
 
-    // Hello Den!
-
     @Autowired
     FilmLibrary fl = new FilmLibrary();
 
