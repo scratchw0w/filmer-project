@@ -11,7 +11,6 @@ public class Film {
     private double rate;
     private List<String> actors = new ArrayList<>();
     private String genre;
-    // done
 
     public Film() {}
 
