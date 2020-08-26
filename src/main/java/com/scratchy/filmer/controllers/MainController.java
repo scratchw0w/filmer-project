@@ -15,6 +15,8 @@ import java.util.*;
 @SessionAttributes("tList")
 public class MainController {
 
+    // Hello Den!
+
     @Autowired
     FilmLibrary fl = new FilmLibrary();
 
@@ -26,7 +28,6 @@ public class MainController {
     @PostMapping(value = "/process")
     public void process(@RequestParam("arr[]") List<String> arr, Model theModel) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         List<String> genres = new ArrayList<>(arr);
-        System.out.println("In process()");
         System.out.println(genres);
         theModel.addAttribute("tList", genres);
         List<Film> filmsList = getFilms(genres);
