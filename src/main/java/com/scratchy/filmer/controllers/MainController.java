@@ -15,7 +15,10 @@ import java.util.*;
 @SessionAttributes("tList")
 public class MainController {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
     @Autowired
     FilmLibrary fl = new FilmLibrary();
 
