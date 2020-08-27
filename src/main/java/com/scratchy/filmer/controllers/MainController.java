@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 import java.util.*;
 
 @Controller
-@SessionAttributes("tList")
+@SessionAttributes({"tList", "fList"})
 public class MainController {
 
     @Autowired
@@ -23,7 +23,7 @@ public class MainController {
         return "welcome_page";
     }
 
-    @PostMapping(value = "/process")
+    @PostMapping("/process")
     public void process(@RequestParam("arr[]") List<String> arr, Model theModel) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         List<String> genres = new ArrayList<>(arr);
         System.out.println(genres);
