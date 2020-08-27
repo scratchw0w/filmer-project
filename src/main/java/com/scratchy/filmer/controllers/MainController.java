@@ -1,5 +1,6 @@
 package com.scratchy.filmer.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.scratchy.filmer.entity.Film;
 import com.scratchy.filmer.store.FilmLibrary;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class MainController {
     @Autowired
     FilmLibrary fl = new FilmLibrary();
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String welcome_page(){
         return "welcome_page";
     }
@@ -33,7 +34,7 @@ public class MainController {
         theModel.addAttribute("fList", filmsList);
     }
 
-    @RequestMapping("/films")
+    @GetMapping("/films")
     public String finalResults() {
        return "film_page";
     }
