@@ -5,9 +5,9 @@ let arr = new Array();
 let counterToShow;
 
 async function getFilms(){
- const films = await axios.get("http://www.omdbapi.com/?apikey=[a9089853]&type=movie");
- const list = films.data;
- console.log(list);
+ const films = await axios.get("http://www.omdbapi.com/?i=tt3896198&apikey=a3d4f820");
+ const film = films.data;
+ console.log(film);
 }
 
 getFilms();
