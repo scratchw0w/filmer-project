@@ -6,6 +6,8 @@
 
     <head>
       <title>FilmChooser</title>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+      <script src="${pageContext.request.contextPath}/scripts/filmPageScript.js" defer></script>
     </head>
 
     <body>
