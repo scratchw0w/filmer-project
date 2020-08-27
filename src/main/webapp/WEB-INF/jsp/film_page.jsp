@@ -19,7 +19,13 @@
       <h4>Choose films you liked the most..</h4>
       <h6>*(If there is no films you've watched/liked,<br>just push next button.)</h6>
 
-
+      <tr>
+        <th>Title</th>
+        <th>Producer</th>
+        <th>Year</th>
+        <th>Genre</th>
+      </tr>
+      <br>
       <c:forEach var="fListTemp" items="${fList}" >
         <tr>
           <th>${fListTemp.title}</th>
