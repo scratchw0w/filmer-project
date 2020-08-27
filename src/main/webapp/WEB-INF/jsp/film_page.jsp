@@ -22,7 +22,11 @@
 
       <c:forEach var="fListTemp" items="${fList}" >
         <tr>
-          <th><button>${fListTemp}</button></th>
+          <th>${fListTemp.title}</th>
+          <th>${fListTemp.producer}</th>
+          <th>${fListTemp.yearOfProd}</th>
+          <th>${fListTemp.genre}</th>
+          <br>
         </tr>
       </c:forEach>
 
