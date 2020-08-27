@@ -4,6 +4,14 @@ let counter = 0;
 let arr = new Array();
 let counterToShow;
 
+async function getFilms(){
+ const films = await axios.get("http://www.omdbapi.com/?apikey=[a9089853]&type=movie");
+ const list = films.data;
+ console.log(list);
+}
+
+getFilms();
+
 function checkCounter(){
   counter=0;
   if (document.getElementById("action").style.color=="orange") {
