@@ -19,7 +19,10 @@ async function getPoster(){
             `http://www.omdbapi.com/?t=${title}&apikey=a3d4f820`
         );
         const posterUrl = filmData.data.Poster;
+        const plot = filmData.data.Plot;
         const imgTag = item.querySelector("img");
+        item.setAttribute("data-plot", plot);
+        item.querySelector("#plot").textContent = plot
         console.log(imgTag);
         imgTag.src = posterUrl;
     }

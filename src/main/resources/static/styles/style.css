@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html {
@@ -19,6 +21,14 @@ html {
     color: darkmagenta;
     border: 2px solid darkmagenta;
     padding: 10px 15px;
+}
+
+.info {
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 15rem;
 }
 
 h5 span{
@@ -73,11 +83,21 @@ h5 span{
     font-weight: lighter;
 }
 
+.film-container {
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+    background-image: url("https://image7.uhdpaper.com/wallpaper-4k/star-wars-the-rise-of-skywalker-movie-poster-rey-vs-kylo-ren-uhdpaper.com-4K-7.562.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 #movie-list {
     list-style: none;
     width: 40rem;
     max-width: 90%;
-    margin: 1rem auto;
+    margin: 0rem auto;
     padding: 0;
 }
 
@@ -86,6 +106,7 @@ h5 span{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     border-radius: 10px;
     display: flex;
+    background-color: white;
 }
 
 .liked {
