@@ -29,29 +29,24 @@ prefix="form" uri="http://www.springframework.org/tags/form" %>
             *(If there is no films you've watched/liked,<br />just push next
             button.)
         </h6>
-
-        <div class="desc-container">
-            <h3>Title</h3>
-            <h3>Producer</h3>
-            <h3>Year</h3>
-            <h3>Genre</h3>
-        </div>
-        <br />
+        <hr>
         <ul id="movie-list">
             <c:forEach var="fListTemp" items="${fList}">
-                <li>
+                <li class="movie-element" data-isliked="false">
                   <div class="movie-element__image">
                     <img src="${movieItem.image}" alt="${movieItem.title}">
                 </div>
                 <div class="movie-element__info">
                   <h5 id="title">${fListTemp.title}</h5> 
-                  <h5>${fListTemp.producer}</h5>
-                  <h5>${fListTemp.yearOfProd}</h5>
-                  <h5>${fListTemp.genre}</h5>
+                  <h5 class="lighter"><span>Director: </span> ${fListTemp.producer}</h5>
+                  <h5 class="lighter"><span>Year: </span>${fListTemp.yearOfProd}</h5>
+                  <h5 class="lighter"><span>Genre: </span>${fListTemp.genre}</h5>
                 </div>
                 </li>
             </c:forEach>
         </ul>
-        <button>Next</button>
+        <div class="next-btn-container">
+          <button id="next-btn">Next</button>
+        </div>
     </body>
 </html>

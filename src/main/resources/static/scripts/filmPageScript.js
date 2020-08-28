@@ -1,4 +1,6 @@
 const movieListJsp = document.getElementById("movie-list");
+
+
 async function getFilms() {
     const title = "Titanic";
     const year = 1997;
@@ -21,8 +23,20 @@ async function getPoster(){
         console.log(imgTag);
         imgTag.src = posterUrl;
     }
-    console.log(listItems);
 }
 
 getFilms();
 getPoster();
+
+movieListJsp.addEventListener("click", event =>{
+    if(event.target.closest("li")){
+        const listItem = event.target.closest("li");
+        listItem.classList.toggle("liked");
+        if(listItem.dataset.isliked === "true"){
+            listItem.dataset.isliked = "false";
+        } else {
+            listItem.dataset.isliked = "true";
+        }
+        console.log(listItem.dataset.isliked);
+    }
+})
