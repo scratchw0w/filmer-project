@@ -46,9 +46,7 @@ movieListJsp.addEventListener("click", event =>{
 
 function enteringResult() {
   //Sending
-  let arr = new Array();
-  arr.push('Fel');
-  arr.push('Sel');
+  let arr = [];
   $.post(`${document.URL}/process`, {"arr[]": arr});
   //href:
   location.href="/result";

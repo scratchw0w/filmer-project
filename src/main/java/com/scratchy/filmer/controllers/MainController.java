@@ -43,8 +43,19 @@ public class MainController {
 
     @PostMapping("films/process")
     public void processLikedFilms(@RequestParam("arr[]")List<String> arr, Model theModel){
-        System.out.println("In processLikedFilms: " + filmsList + "\narr: " + arr);
-        theModel.addAttribute("array", arr);
+        System.out.println("\n\n\nIn processLikedFilms");
+        List<Film> likedFilms = gettingLikedFilms(filmsList, arr);
+        likedFilms.forEach((v) -> System.out.println(v.getInfo()));
+        if(likedFilms.isEmpty()) {
+            theModel.addAttribute("likedFilms", "FUNCTION..");
+            return;
+        }
+
+        // Find some interesting films for user
+
+
+        //Adding this film to the model Attribute
+        theModel.addAttribute("likedFilms", "FUNCTION..");
     }
 
     @GetMapping("/result")
@@ -89,5 +100,12 @@ public class MainController {
         }
         return null;
     }
-
+    private List<Film> gettingLikedFilms(List<Film> sourceList, List<String> likedFilms){
+        List<Film> acceptedFilms = new ArrayList<>();
+        for(int i = 0; i < sourceList.size(); i++){
+            if(likedFilms.get(i).equals("true"))
+                acceptedFilms.add(sourceList.get(i));
+        }
+        return acceptedFilms;
+    }
 }
