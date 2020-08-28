@@ -14,6 +14,10 @@ prefix="form" uri="http://www.springframework.org/tags/form" %>
             src="${pageContext.request.contextPath}/scripts/filmPageScript.js"
             defer
         ></script>
+        <script
+           src="http://code.jquery.com/jquery-1.11.0.min.js"
+           defer
+        ></script>
     </head>
 
     <body>
@@ -37,7 +41,7 @@ prefix="form" uri="http://www.springframework.org/tags/form" %>
                     <img src="${movieItem.image}" alt="${movieItem.title}">
                 </div>
                 <div class="movie-element__info">
-                  <h5 id="title">${fListTemp.title}</h5> 
+                  <h5 id="title">${fListTemp.title}</h5>
                   <h5 class="lighter"><span>Director: </span> ${fListTemp.producer}</h5>
                   <h5 class="lighter"><span>Year: </span>${fListTemp.yearOfProd}</h5>
                   <h5 class="lighter"><span>Genre: </span>${fListTemp.genre}</h5>

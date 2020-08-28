@@ -13,11 +13,13 @@ import java.lang.reflect.Method;
 import java.util.*;
 
 @Controller
-@SessionAttributes({"tList", "fList"})
+@SessionAttributes({"tList", "fList", "array"})
 public class MainController {
 
     @Autowired
     FilmLibrary fl = new FilmLibrary();
+
+    private List<Film> filmsList;
 
     @GetMapping("/")
     public String welcome_page(){
@@ -29,14 +31,25 @@ public class MainController {
         List<String> genres = new ArrayList<>(arr);
         System.out.println(genres);
         theModel.addAttribute("tList", genres);
-        List<Film> filmsList = getFilms(genres);
+        filmsList = getFilms(genres);
         filmsList.forEach((v) -> System.out.println(v.getInfo()));
         theModel.addAttribute("fList", filmsList);
     }
 
     @GetMapping("/films")
-    public String finalResults() {
-       return "film_page";
+    public String filmListResults() {
+        return "film_page";
+    }
+
+    @PostMapping("films/process")
+    public void processLikedFilms(@RequestParam("arr[]")List<String> arr, Model theModel){
+        System.out.println("In processLikedFilms: " + filmsList + "\narr: " + arr);
+        theModel.addAttribute("array", arr);
+    }
+
+    @GetMapping("/result")
+    public String resultPage(){
+        return "result_page";
     }
 
     private List<Film> filmGetter(int val, String genreArg) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {

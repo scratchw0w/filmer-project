@@ -1,5 +1,5 @@
 const movieListJsp = document.getElementById("movie-list");
-
+const nextBtn = document.getElementById("next-btn");
 
 async function getFilms() {
     const title = "Titanic";
@@ -39,4 +39,16 @@ movieListJsp.addEventListener("click", event =>{
         }
         console.log(listItem.dataset.isliked);
     }
-})
+});
+
+function enteringResult() {
+  //Sending
+  let arr = new Array();
+  arr.push('Fel');
+  arr.push('Sel');
+  $.post(`${document.URL}/process`, {"arr[]": arr});
+  //href:
+  location.href="/result";
+}
+
+nextBtn.addEventListener("click", enteringResult);
