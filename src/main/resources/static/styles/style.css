@@ -1,3 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .desc-container {
-    
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+.desc-container h3 {
+    margin: auto;
+    background-color: gold;
+    color: darkmagenta;
+    border: 2px solid darkmagenta;
+    padding: 10px 15px;
+}
+
+h5 span{
+    font-weight: bold;
+}
+
+#title {
+    font-size: 2rem;
+}
+
+#next-btn {
+    background-color: gold;
+    font-size: large;
+    color: darkmagenta;
+    border: 2px solid darkmagenta;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#next-btn:hover {
+    color: gold;
+    background-color: darkmagenta;
+}
+
+#next-btn:focus{
+    outline-style: none;
+}
+
+.next-btn-container {
+    text-align: center;
+}
+
+.movie-element__image {
+    flex: 1;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+
+.movie-element__image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.movie-element__info {
+    flex: 2;
+    padding: 1rem;
+}
+
+.lighter {
+    font-weight: lighter;
+}
+
+#movie-list {
+    list-style: none;
+    width: 40rem;
+    max-width: 90%;
+    margin: 1rem auto;
+    padding: 0;
+}
+
+.movie-element {
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+    display: flex;
+}
+
+.liked {
+    background-color: lightgreen;
 }
