@@ -1,4 +1,5 @@
 const movieListJsp = document.getElementById("movie-list");
+const listItems = movieListJsp.querySelectorAll("li");
 const nextBtn = document.getElementById("next-btn");
 
 async function getFilms() {
@@ -12,7 +13,6 @@ async function getFilms() {
 }
 
 async function getPoster(){
-    const listItems = movieListJsp.querySelectorAll("li");
     for (const item of listItems) {
         const title = item.querySelector("h5").textContent;
         const filmData = await axios.get(
@@ -47,6 +47,10 @@ movieListJsp.addEventListener("click", event =>{
 function enteringResult() {
   //Sending
   let arr = [];
+  for (const item of listItems) {
+      arr.push(item.dataset.isliked);
+  }
+
   $.post(`${document.URL}/process`, {"arr[]": arr});
   //href:
   location.href="/result";
