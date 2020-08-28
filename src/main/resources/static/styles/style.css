@@ -104,9 +104,9 @@ h5 span{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     border-radius: 10px;
     display: flex;
-    background-color: white;
+    background-color: rgba(94, 105, 141, 0.76);
 }
 
 .liked {
-    background-color: lightgreen;
+    background-color: rgba(144, 238, 144, 0.664);
 }

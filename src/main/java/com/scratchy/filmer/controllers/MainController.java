@@ -1,6 +1,5 @@
 package com.scratchy.filmer.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.scratchy.filmer.entity.Film;
 import com.scratchy.filmer.store.FilmLibrary;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,7 @@ import java.lang.reflect.Method;
 import java.util.*;
 
 @Controller
-@SessionAttributes({"tList", "fList", "array"})
+@SessionAttributes({ "tList", "fList", "array" })
 public class MainController {
 
     @Autowired
@@ -22,12 +21,13 @@ public class MainController {
     private List<Film> filmsList;
 
     @GetMapping("/")
-    public String welcome_page(){
+    public String welcome_page() {
         return "welcome_page";
     }
 
     @PostMapping("/process")
-    public void process(@RequestParam("arr[]") List<String> arr, Model theModel) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+    public void process(@RequestParam("arr[]") List<String> arr, Model theModel)
+            throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         List<String> genres = new ArrayList<>(arr);
         System.out.println(genres);
         theModel.addAttribute("tList", genres);
@@ -42,45 +42,48 @@ public class MainController {
     }
 
     @PostMapping("films/process")
-    public void processLikedFilms(@RequestParam("arr[]")List<String> arr, Model theModel){
+    public void processLikedFilms(@RequestParam("arr[]") List<String> arr, Model theModel) {
         System.out.println("\n\n\nIn processLikedFilms");
         List<Film> likedFilms = gettingLikedFilms(filmsList, arr);
         likedFilms.forEach((v) -> System.out.println(v.getInfo()));
-        if(likedFilms.isEmpty()) {
+        if (likedFilms.isEmpty()) {
             theModel.addAttribute("likedFilms", "FUNCTION..");
             return;
         }
 
         // Find some interesting films for user
 
-
-        //Adding this film to the model Attribute
+        // Adding this film to the model Attribute
         theModel.addAttribute("likedFilms", "FUNCTION..");
     }
 
     @GetMapping("/result")
-    public String resultPage(){
+    public String resultPage() {
         return "result_page";
     }
 
-    private List<Film> filmGetter(int val, String genreArg) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    private List<Film> filmGetter(int val, String genreArg)
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Random random = new Random();
         Class cl = FilmLibrary.class;
-        Method getList = cl.getDeclaredMethod("get" + genreArg.substring(0, 1).toUpperCase()
-                + genreArg.substring(1) + "List");
+        Method getList = cl
+                .getDeclaredMethod("get" + genreArg.substring(0, 1).toUpperCase() + genreArg.substring(1) + "List");
         getList.setAccessible(true);
         List<Film> result = (List<Film>) getList.invoke(fl);
 
         int index = random.nextInt(10);
         return result.subList(index, index + val);
     }
-    private List<Film> getFilms(List<String> genreList) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
-        if(genreList.size() == 0) throw new RuntimeException();
-        if(genreList.size() == 1) {
+
+    private List<Film> getFilms(List<String> genreList)
+            throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+        if (genreList.size() == 0)
+            throw new RuntimeException();
+        if (genreList.size() == 1) {
             List<Film> result = filmGetter(12, genreList.get(0));
             return result;
         }
-        if (genreList.size() == 2){
+        if (genreList.size() == 2) {
             List<Film> partF = filmGetter(6, genreList.get(0));
             List<Film> partS = filmGetter(6, genreList.get(1));
             List<Film> result = new ArrayList<>();
@@ -88,7 +91,7 @@ public class MainController {
             result.addAll(5, partS);
             return result;
         }
-        if (genreList.size() == 3){
+        if (genreList.size() == 3) {
             List<Film> partF = filmGetter(4, genreList.get(0));
             List<Film> partS = filmGetter(4, genreList.get(1));
             List<Film> partT = filmGetter(4, genreList.get(2));
@@ -100,10 +103,11 @@ public class MainController {
         }
         return null;
     }
-    private List<Film> gettingLikedFilms(List<Film> sourceList, List<String> likedFilms){
+
+    private List<Film> gettingLikedFilms(List<Film> sourceList, List<String> likedFilms) {
         List<Film> acceptedFilms = new ArrayList<>();
-        for(int i = 0; i < sourceList.size(); i++){
-            if(likedFilms.get(i).equals("true"))
+        for (int i = 0; i < sourceList.size(); i++) {
+            if (likedFilms.get(i).equals("true"))
                 acceptedFilms.add(sourceList.get(i));
         }
         return acceptedFilms;
