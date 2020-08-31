@@ -108,7 +108,7 @@ h5 span{
 }
 
 .brighter-green {
-    background-color: rgba(54, 243, 54, 0.664) !important;
+    background-color: rgba(54, 243, 54, 0.712) !important;
 }
 
 .brighter-white {
@@ -116,5 +116,5 @@ h5 span{
 }
 
 .liked {
-    background-color: rgba(173, 230, 173, 0.664);
+    background-color: rgba(100, 231, 100, 0.664);
 }
