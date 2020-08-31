@@ -6,8 +6,14 @@
   <head>
     <title>FilmChooser</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/main-styles.css">
+    
+    <!-- font links-->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script 
+    src="http://code.jquery.com/jquery-1.11.0.min.js" 
+    defer
+    ></script>
     <script
       src="${pageContext.request.contextPath}/scripts/mainPageScript.js"
       defer
@@ -20,7 +26,7 @@
       <!-- LOGO + Title -->
 
       
-      <img id = "logo" src="images/logoBob.png"/>
+      <img id = "logo" src="images/popcorn.png"/>
       <div class="logo-text-container">
         <h1>Film Finder</h1>
       </div>
