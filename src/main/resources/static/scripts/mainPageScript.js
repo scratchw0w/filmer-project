@@ -136,7 +136,7 @@ function clearFunc(){
 function actionFunc(){
   if (document.getElementById("action").style.color=="orange") {
     counter--;
-    document.getElementById("action").style.color = "rgb(231, 27, 250)";
+    document.getElementById("action").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -148,7 +148,7 @@ function actionFunc(){
 function adventureFunc(){
   if (document.getElementById("adventure").style.color=="orange") {
     counter--;
-    document.getElementById("adventure").style.color = "black";
+    document.getElementById("adventure").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -159,7 +159,7 @@ function adventureFunc(){
 function dramaFunc(){
   if (document.getElementById("drama").style.color=="orange") {
     counter--;
-    document.getElementById("drama").style.color = "black";
+    document.getElementById("drama").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -170,7 +170,7 @@ function dramaFunc(){
 function comedyFunc(){
   if (document.getElementById("comedy").style.color=="orange") {
     counter--;
-    document.getElementById("comedy").style.color = "black";
+    document.getElementById("comedy").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -181,7 +181,7 @@ function comedyFunc(){
 function crimeFunc(){
   if (document.getElementById("crime").style.color=="orange") {
     counter--;
-    document.getElementById("crime").style.color = "black";
+    document.getElementById("crime").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -192,7 +192,7 @@ function crimeFunc(){
 function fantasyFunc(){
   if (document.getElementById("fantasy").style.color=="orange") {
     counter--;
-    document.getElementById("fantasy").style.color = "black";
+    document.getElementById("fantasy").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -203,7 +203,7 @@ function fantasyFunc(){
 function horrorFunc(){
   if (document.getElementById("horror").style.color=="orange") {
     counter--;
-    document.getElementById("horror").style.color = "black";
+    document.getElementById("horror").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -214,7 +214,7 @@ function horrorFunc(){
 function historicalFunc(){
   if (document.getElementById("historical").style.color=="orange") {
     counter--;
-    document.getElementById("historical").style.color = "black";
+    document.getElementById("historical").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -225,7 +225,7 @@ function historicalFunc(){
 function mysteryFunc(){
   if (document.getElementById("mystery").style.color=="orange") {
     counter--;
-    document.getElementById("mystery").style.color = "black";
+    document.getElementById("mystery").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -236,7 +236,7 @@ function mysteryFunc(){
 function philosophicalFunc(){
   if (document.getElementById("philosophical").style.color=="orange") {
     counter--;
-    document.getElementById("philosophical").style.color = "black";
+    document.getElementById("philosophical").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -247,7 +247,7 @@ function philosophicalFunc(){
 function romanceFunc(){
   if (document.getElementById("romance").style.color=="orange") {
     counter--;
-    document.getElementById("romance").style.color = "black";
+    document.getElementById("romance").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -258,7 +258,7 @@ function romanceFunc(){
 function satireFunc(){
   if (document.getElementById("satire").style.color=="orange") {
     counter--;
-    document.getElementById("satire").style.color = "black";
+    document.getElementById("satire").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -269,7 +269,7 @@ function satireFunc(){
 function socialFunc(){
   if (document.getElementById("social").style.color=="orange") {
     counter--;
-    document.getElementById("social").style.color = "black";
+    document.getElementById("social").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -280,7 +280,7 @@ function socialFunc(){
 function thrillerFunc(){
   if (document.getElementById("thriller").style.color=="orange") {
     counter--;
-    document.getElementById("thriller").style.color = "black";
+    document.getElementById("thriller").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();
@@ -291,7 +291,7 @@ function thrillerFunc(){
 function westernFunc(){
   if (document.getElementById("western").style.color=="orange") {
     counter--;
-    document.getElementById("western").style.color = "black";
+    document.getElementById("western").style.color = "rgb(250, 27, 64)";
     return;
   }
   checkCounter();

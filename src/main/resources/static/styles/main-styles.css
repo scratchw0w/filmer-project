@@ -1,132 +1,167 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Ubuntu', sans-serif;
-    height: 100vh;
-    background-image: url("/images/image.jpg");
-    background-size: cover;
+  font-family: "Ubuntu", sans-serif;
+  height: 100vh;
+  background-image: url("/images/image.jpg");
+  background-size: cover;
 }
 
 header {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
 
+.logo-text-container {
+  text-align: center;
+  width: 40%;
+}
+
+.logo-text-container h1 {
+  color: white;
+  font-size: 80px;
 }
 
 .searcher-class {
-    margin-left: auto;
-    display: flex;
+  margin-top: 3pt;
+  margin-left: auto;
+  display: flex;
 }
 
 #text-input {
-    padding: 3px 10px;
-    background-color: rgba(139, 179, 224, 0.377);
-    border: 1px solid grey;
-    margin-right: 5px;
-    margin-left: 5px;
+  padding: 3px 10px;
+  background-color: rgba(139, 179, 224, 0.377);
+  border: 1px solid grey;
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 300px;
+  height: fit-content;
 }
 
 #text-input:focus {
-    background-color: rgba(139, 179, 224, 0.377);
+  background-color: rgba(139, 179, 224, 0.7);
+  outline-color: gold;
+  outline-style: hidden;
+  outline-width: 4pt;
 }
 
 #find-movie-btn {
-    height: fit-content;
-    color: white;
-    font-weight: bold;
-    font-family: 'Ubuntu', sans-serif;
-    padding: 3px 10px;
-    width: fit-content;
-    background: rgba(139, 179, 224, 0.377);
-    border: 1px solid gray;
-    cursor: pointer;
+  height: fit-content;
+  color: white;
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+  padding: 3px 10px;
+  width: fit-content;
+  background: rgba(139, 179, 224, 0.377);
+  border: 1px solid gray;
+  cursor: pointer;
 }
 
 #find-movie-btn:hover {
-    background: rgba(139, 179, 224, 0.7)
+  background: rgba(139, 179, 224, 0.7);
 }
 
-
 #find-text {
-    font-style: italic;
-    font-size: large;
-    color: blue;
+  font-style: bold;
+  font-size: large;
+  color: white;
 }
 
 #find-movie-text {
-    text-align: center;
-    font-size: large;
-    color: red;
-}
-
-#text-input {
-    width: 320px;
-    height: 15%;
+  text-align: center;
+  font-size: large;
+  color: red;
 }
 
 .genres-container {
-    justify-content: center;
+  justify-content: center;
 }
 
 .genres-container__nested {
-    width: fit-content;
-    border-radius: 30pt;
-    border: 2px solid rgb(250, 27, 64);
-    margin: auto;
-    background-color: rgba(231, 27, 250, 0.575);
+  width: fit-content;
+  border-radius: 30pt;
+  border: 2px solid rgba(23, 20, 180, 0.596);
+  margin: auto;
+  background-color: rgba(31, 17, 163, 0.712);
+  box-shadow: 0 0 20px black;
 }
 
 header {
-    height: 20vh;
-}
-
-hr {
-    background-color: rgb(250, 27, 64);
-    border: none;
-    height: 2pt;
+  height: 20vh;
 }
 
 .genre-item {
-    border:rgb(128, 74, 83);
-    border-radius: 10px;
-    color: rgb(250, 27, 64);
-    background-color: rgba(139, 179, 224, 0.377);
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 400;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 20pt;
-    cursor: pointer;
+  border: 2px solid rgb(250, 27, 64);
+  border-radius: 10px;
+  color: rgb(250, 27, 64);
+  background-color: rgba(30, 78, 133, 0.589);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 20pt;
+  cursor: pointer;
+}
+
+.genre-item:hover {
+  background-color: rgba(43, 15, 122, 0.849);
+}
+
+#reset:hover {
+  background-color: rgba(255, 38, 0, 0.6);
 }
 
 button:focus {
-    outline-style: none;
+  outline-style: none;
 }
 .genres-items__checkout {
-    display: flex;
+  display: flex;
 }
 
 .next-container {
-    text-align: end;
-    width: 100%;
+  text-align: end;
+  width: 100%;
 }
 .brighter-red {
-    background-color: rgba(212, 41, 64, 0.5);
+  color: white;
+}
+
+.brighter-red:focus {
+  outline-style: none;
 }
 
 .brighter-green {
-    background-color: rgba(52, 163, 52, 0.5);   
+  color: lightgreen;
+}
+
+.brighter-green:hover {
+  background-color: rgba(60, 192, 60, 0.7) !important;
+}
+
+.brighter-green:focus {
+  outline-style: none;
 }
 
 #reset {
-    justify-self: start;
+  justify-self: start;
 }
 
 #checkout {
-    justify-self: end;
+  justify-self: end;
+}
+
+h3 {
+  padding-left: 180pt;
+  color: white;
+}
+
+#logo {
+  width: 200pt;
+  height: 100pt;
 }

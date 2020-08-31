@@ -18,7 +18,12 @@
 
     <header>
       <!-- LOGO + Title -->
-      <h3>Film Finder</h3>
+
+      
+      <img id = "logo" src="images/logoBob.png"/>
+      <div class="logo-text-container">
+        <h1>Film Finder</h1>
+      </div>
 
       <!-- yours (Max) -->
         <div class="searcher-class">
@@ -31,11 +36,6 @@
 
     <!-- yours (Denys) -->
     <main>
-      <div id="wrapper">
-        <div id="header">
-          <h3>Choose your favourite genre:</h3>
-        </div>
-      </div>
       <div class="genres-container">
         <div class="genres-container__nested">
 
@@ -75,7 +75,6 @@
             <button id="western" class="genre-item" onclick="westernFunc()">Western</button>
   
           </div>
-          <hr>
           <div class="genres-items__checkout">
             <input id="reset" type="button" value="Reset" class="genre-item brighter-red" onclick="clearFunc()" />
             <div class="next-container">
