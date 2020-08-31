@@ -31,12 +31,22 @@ html {
     height: 15rem;
 }
 
+.rate {
+    display: flex;
+    margin-left: auto;
+}
+
+#imdbRate {
+    margin-right: 10pt;
+}
+
 h5 span{
     font-weight: bold;
 }
 
 #title {
     font-size: 2rem;
+    padding-bottom: 20pt;
 }
 
 #next-btn {

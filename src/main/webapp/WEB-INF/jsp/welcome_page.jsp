@@ -3,129 +3,95 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>FilmChooser</title>
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js" defer></script>
-        <script src="${pageContext.request.contextPath}/scripts/mainPageScript.js" defer></script>
-    </head>
+  <head>
+    <title>FilmChooser</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/main-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js" defer></script>
+    <script
+      src="${pageContext.request.contextPath}/scripts/mainPageScript.js"
+      defer
+    ></script>
+  </head>
 
-    <body>
-        <h3>WELCOME!</h3>
+  <body>
 
-        <div id="wrapper">
-            <div id="header">
-                <h3>Choose your favourite genre:</h3>
-            </div>
+    <header>
+      <!-- LOGO + Title -->
+      <h3>Film Finder</h3>
+
+      <!-- yours (Max) -->
+        <div class="searcher-class">
+            <p id="find-text">Find your movie:</p> <input id = "text-input" type="text">
+            <button id="find-movie-btn">Find</button>
         </div>
 
-        <div id="classList">
-            <div id="content">
-                <table>
-                    <tr>
-                        <th>
-                            <button id="action" onclick="actionFunc()">
-                                Action
-                            </button>
-                        </th>
-                        <th>
-                            <button id="adventure" onclick="adventureFunc()">
-                                Adventure
-                            </button>
-                        </th>
-                        <th>
-                            <button id="drama" onclick="dramaFunc()">
-                                Drama
-                            </button>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <button id="comedy" onclick="comedyFunc()">
-                                Comedy
-                            </button>
-                        </th>
-                        <th>
-                            <button id="crime" onclick="crimeFunc()">
-                                Crime
-                            </button>
-                        </th>
-                        <th>
-                            <button id="fantasy" onclick="fantasyFunc()">
-                                Fantasy
-                            </button>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <button id="horror" onclick="horrorFunc()">
-                                Horror
-                            </button>
-                        </th>
-                        <th>
-                            <button id="historical" onclick="historicalFunc()">
-                                Historical
-                            </button>
-                        </th>
-                        <th>
-                            <button id="mystery" onclick="mysteryFunc()">
-                                Mystery
-                            </button>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <button
-                                id="philosophical"
-                                onclick="philosophicalFunc()"
-                            >
-                                Philosophical
-                            </button>
-                        </th>
-                        <th>
-                            <button id="romance" onclick="romanceFunc()">
-                                Romance
-                            </button>
-                        </th>
-                        <th>
-                            <button id="satire" onclick="satireFunc()">
-                                Satire
-                            </button>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <button id="social" onclick="socialFunc()">
-                                Social
-                            </button>
-                        </th>
-                        <th>
-                            <button id="thriller" onclick="thrillerFunc()">
-                                Thriller
-                            </button>
-                        </th>
-                        <th>
-                            <button id="western" onclick="westernFunc()">
-                                Western
-                            </button>
-                        </th>
 
-                        <th>
-                            <input
-                                id="reset"
-                                type="button"
-                                value="Reset"
-                                onclick="clearFunc()"
-                            />
-                        </th>
-                    </tr>
-                </table>
-                <input
-                    id="checkout"
-                    type="button"
-                    onclick="checkoutFunc()"
-                    value="Next"
-                />
-            </div>
+    </header>
+
+    <!-- yours (Denys) -->
+    <main>
+      <div id="wrapper">
+        <div id="header">
+          <h3>Choose your favourite genre:</h3>
         </div>
-    </body>
+      </div>
+      <div class="genres-container">
+        <div class="genres-container__nested">
+
+          <div class="genres-items">
+            <button id="action" class="genre-item" onclick="actionFunc()">Action</button>
+  
+            <button id="adventure" class="genre-item" onclick="adventureFunc()">Adventure</button>
+  
+            <button id="drama" class="genre-item" onclick="dramaFunc()">Drama</button>
+  
+            <button id="comedy" class="genre-item" onclick="comedyFunc()">Comedy</button>
+  
+            <button id="crime" class="genre-item" onclick="crimeFunc()">Crime</button>
+          </div>
+          <div class="genres-items">
+            <button id="fantasy" class="genre-item" onclick="fantasyFunc()">Fantasy</button>
+  
+            <button id="horror" class="genre-item" onclick="horrorFunc()">Horror</button>
+  
+            <button id="historical" class="genre-item" onclick="historicalFunc()">Historical</button>
+  
+            <button id="mystery" class="genre-item" onclick="mysteryFunc()">Mystery</button>
+  
+            <button id="philosophical" class="genre-item" onclick="philosophicalFunc()">
+              Philosophical
+            </button>
+          </div>
+          <div class="genres-items">
+            <button id="romance" class="genre-item" onclick="romanceFunc()">Romance</button>
+  
+            <button id="satire" class="genre-item" onclick="satireFunc()">Satire</button>
+  
+            <button id="social" class="genre-item" onclick="socialFunc()">Social</button>
+  
+            <button id="thriller" class="genre-item" onclick="thrillerFunc()">Thriller</button>
+  
+            <button id="western" class="genre-item" onclick="westernFunc()">Western</button>
+  
+          </div>
+          <hr>
+          <div class="genres-items__checkout">
+            <input id="reset" type="button" value="Reset" class="genre-item brighter-red" onclick="clearFunc()" />
+            <div class="next-container">
+            <input
+            id="checkout"
+                type="button"
+                onclick="checkoutFunc()"
+                value="Next"
+                class="genre-item brighter-green"
+              />
+            </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

@@ -1,3 +1,5 @@
+const movieText = document.getElementById("text-input");
+const findButton = document.getElementById("find-movie-btn");
 
 
 let counter = 0;
@@ -5,6 +7,12 @@ let arr = new Array();
 let counterToShow;
 
 
+findButton.addEventListener("click", () => {
+  console.log(movieText.value);
+  let title = movieText.value;
+  $.post(`${document.URL}/filmprocessing`, {"title": title});
+  location.href="/film";
+});
 
 function checkCounter(){
   counter=0;
@@ -128,7 +136,7 @@ function clearFunc(){
 function actionFunc(){
   if (document.getElementById("action").style.color=="orange") {
     counter--;
-    document.getElementById("action").style.color = "black";
+    document.getElementById("action").style.color = "rgb(231, 27, 250)";
     return;
   }
   checkCounter();

@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 import java.util.*;
 
 @Controller
-@SessionAttributes({ "tList", "fList", "array" })
+@SessionAttributes({ "tList", "fList", "array" , "filmTitle"})
 public class MainController {
 
     @Autowired
@@ -61,6 +61,21 @@ public class MainController {
     public String resultPage() {
         return "result_page";
     }
+
+    @PostMapping("/filmprocessing")
+    public void film_processing_page(@RequestParam("title") String title, Model theModel){
+        StringBuilder str = new StringBuilder();
+        str.append(title.substring(0, 1).toUpperCase());
+        str.append(title.substring(1, title.length()));
+        System.out.println(str);
+        theModel.addAttribute("filmTitle", str);
+    }
+
+    @GetMapping("/film")
+    public String filmPage(){
+        return "chosen_film";
+    }
+
 
     private List<Film> filmGetter(int val, String genreArg)
             throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
