@@ -1,5 +1,6 @@
 <html>
   <head>
+    <title>FilmFinder</title>
   </head>
 
   <body>

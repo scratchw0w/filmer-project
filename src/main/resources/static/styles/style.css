@@ -129,3 +129,27 @@ h5 span{
 .liked {
     background-color: rgba(100, 231, 100, 0.664);
 }
+
+
+.head-top {
+
+
+    background-color: #0c285c;
+}
+
+.logo-container {
+    align-items: flex-start;
+}
+
+#h3-genre {
+    text-align: start;
+    color: white;
+}
+
+#h3-genre-curr {
+    color: white;
+}
+
+.top-panel {
+    position: fixed;
+}

@@ -4,7 +4,7 @@
 
 <html>
   <head>
-    <title>FilmChooser</title>
+    <title>FilmFinder</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/main-styles.css">
     
     <!-- font links-->

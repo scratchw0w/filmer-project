@@ -4,8 +4,10 @@ prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>FilmChooser</title>
+        <title>FilmFinder</title>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/main-styles.css">
+    
         <script
             src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
             defer
@@ -28,21 +30,12 @@ prefix="form" uri="http://www.springframework.org/tags/form" %>
 </head>
 
 <body>
-    <h4>Your genres:</h4>
-    <c:forEach var="tempList" items="${tList}">
-        <tr>
-            ${tempList}
-        </tr>
-    </c:forEach>
 
-    <h4>Choose films you liked the most..</h4>
-    <h6>
-        *(If there is no films you've watched/liked,<br />just push next
-        button.)
-    </h6>
-    <hr>
     <div>
         <div class="film-container">
+            <div class="top-panel">
+            <img id = "logo" src="images/popcorn.png"/>
+            </div>
             <ul id="movie-list">
                 <c:forEach var="fListTemp" items="${fList}">
                     <li class="movie-element" data-isliked="false">

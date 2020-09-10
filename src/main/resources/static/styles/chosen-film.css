@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+.chosen-film-container {
+    margin: 0 !important;
+    background-color: black;
+    height: 100vh;
+}
+.movie-element {
+    cursor: pointer;
+    margin: 0rem 0;
+    box-shadow: 3px 5px 15px rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    background-color: rgba(94, 105, 141, 0.76);
+}
+
+.movie-element__image {
+    flex: 1;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+
+.movie-element__image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.movie-element__info {
+    flex: 2;
+    padding: 1rem;
+}
+
+#title {
+    font-size: 78pt;
+}
+
+.info {
+    font-size: 16pt;
+}
+
+.info p {
+    margin-bottom: 10pt;
+}
