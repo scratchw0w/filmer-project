@@ -31,7 +31,6 @@
         <h1>Film Finder</h1>
       </div>
 
-      <!-- yours (Max) -->
         <div class="searcher-class">
             <p id="find-text">Find your movie:</p> <input id = "text-input" type="text">
             <button id="find-movie-btn">Find</button>
@@ -40,7 +39,7 @@
 
     </header>
 
-    <!-- yours (Denys) -->
+    
     <main>
       <div class="genres-container">
         <div class="genres-container__nested">

@@ -26,7 +26,6 @@
                         <span style="font-weight: bold;" id="metascoreR">Metascore: </span><p id="metascore"></p>
                     </div>
                 </div>
-                <button id="back-btn">MainPage</button>
             </div>
         </li>
     </div>

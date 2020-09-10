@@ -72,7 +72,9 @@ function enteringResult() {
     }
     $.post(`${document.URL}/process`, { "arr[]": arr });
     //href:
-    location.href = "/result";
+
+    setTimeout(20);
+    location.href = "/filmgener";
 }
 
 getFilms();

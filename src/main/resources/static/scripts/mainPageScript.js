@@ -10,6 +10,7 @@ let counterToShow;
 findButton.addEventListener("click", () => {
   console.log(movieText.value);
   let title = movieText.value;
+  
   $.post(`${document.URL}/filmprocessing`, {"title": title});
   location.href="/film";
 });

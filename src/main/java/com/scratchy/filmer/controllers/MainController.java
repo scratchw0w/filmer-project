@@ -19,6 +19,8 @@ public class MainController {
     FilmLibrary fl = new FilmLibrary();
 
     private List<Film> filmsList;
+    private List<Film> likedFilms;
+    private String film;
 
     @GetMapping("/")
     public String welcome_page() {
@@ -44,17 +46,18 @@ public class MainController {
     @PostMapping("films/process")
     public void processLikedFilms(@RequestParam("arr[]") List<String> arr, Model theModel) {
         System.out.println("\n\n\nIn processLikedFilms");
-        List<Film> likedFilms = gettingLikedFilms(filmsList, arr);
+        likedFilms = gettingLikedFilms(filmsList, arr);
         likedFilms.forEach((v) -> System.out.println(v.getInfo()));
         if (likedFilms.isEmpty()) {
-            theModel.addAttribute("likedFilms", "FUNCTION..");
+            theModel.addAttribute("likedFilms", getRandomFilmFromList(filmsList, likedFilms));
             return;
         }
-
         // Find some interesting films for user
-
-        // Adding this film to the model Attribute
+        film = getRandomFilmFromList(filmsList, likedFilms).getTitle();
+        /*
         theModel.addAttribute("likedFilms", "FUNCTION..");
+        **/
+        
     }
 
     @GetMapping("/result")
@@ -71,11 +74,26 @@ public class MainController {
         theModel.addAttribute("filmTitle", str);
     }
 
+    @GetMapping("/filmgener")
+    public String film_generating(Model theModel){
+        theModel.addAttribute("filmTitle", film);
+        return "redirect:/film";
+    }
+
     @GetMapping("/film")
     public String filmPage(){
         return "chosen_film";
     }
 
+
+    private Film getRandomFilmFromList(List<Film> filmsList, List<Film> likedFilms){
+        Random rand = new Random();
+        if(likedFilms.isEmpty()){
+            return filmsList.get(rand.nextInt(filmsList.size() - 1));
+        }
+        filmsList.removeAll(likedFilms);
+        return filmsList.get(rand.nextInt(filmsList.size() - 1));
+    }
 
     private List<Film> filmGetter(int val, String genreArg)
             throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
