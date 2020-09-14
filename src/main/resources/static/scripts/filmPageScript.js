@@ -11,7 +11,6 @@ async function getFilms() {
     const film = films.data;
     console.log(film);
 }
-
 async function getPoster() {
     for (const item of listItems) {
         const title = item.querySelector("h5").textContent;
