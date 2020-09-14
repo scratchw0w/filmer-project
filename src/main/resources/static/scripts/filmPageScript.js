@@ -73,7 +73,7 @@ function enteringResult() {
     //href:
 
     setTimeout(20);
-    location.href = "/filmgener";
+    location.href = "/result";
 }
 
 getFilms();

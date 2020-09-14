@@ -12,11 +12,43 @@ public class SupportClass{
 
     public static List<String> getFinalFilm(List<Film> likedFilms) {
         List<String> result = new ArrayList<>();
+        List<String> genres = new ArrayList<>();
+        int year = 0;
+
+        for(int i = 0; i < likedFilms.size(); i++){
+            if(!genres.contains(likedFilms.get(i).getGenre()))
+                genres.add(likedFilms.get(i).getGenre());
+        }
+
+        
+        String popGenre = null;
+        int counter = 0;
+        int maxCounter = counter;
+        
+        for(int i = 0; i < genres.size(); i++){
+            for(int j = 0; j < likedFilms.size(); j++){
+                if(genres.get(i).equals(likedFilms.get(j).getGenre()))
+                    counter++;
+            }
+            if(maxCounter < counter){
+                maxCounter = counter;
+                popGenre = genres.get(i);
+            }
+            counter = 0;
+        }
+        
+        for(int i = 0; i < likedFilms.size(); i++){
+            year += likedFilms.get(i).getYearOfProd();
+        }
+        year = year / likedFilms.size();        
+
+        result.add(popGenre);
+        result.add(String.valueOf(year));
 
         return result;
     }
 
-    public static List<Film> filmGetter(int val, String genreArg, FilmLibrary fl)
+    private static List<Film> filmGetter(int val, String genreArg, FilmLibrary fl)
             throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Random random = new Random();
         Class cl = FilmLibrary.class;

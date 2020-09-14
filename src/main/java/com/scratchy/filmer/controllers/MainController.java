@@ -64,16 +64,22 @@ public class MainController {
         likedFilms = gettingLikedFilms(filmsList, arr);
         likedFilms.forEach((v) -> System.out.println(v.getInfo()));
         
+        titleAndYear = new ArrayList<>();
+        
         if (likedFilms.isEmpty()) {
-            titleAndYear.add(filmsList.get(0).getGenre());
-            titleAndYear.add(String.valueOf(filmsList.get(0).getYearOfProd()));
+            
+            titleAndYear.add(filmsList.get(1).getGenre());
+            titleAndYear.add(String.valueOf(filmsList.get(1).getYearOfProd()));
+
+            System.out.println(titleAndYear);
 
             theModel.addAttribute("resultFilm", titleAndYear);
             return;
         }
-        // Find some interesting films for user
+        
         titleAndYear = getFinalFilm(likedFilms);
 
+        System.out.println(titleAndYear);
         theModel.addAttribute("resultFilm", titleAndYear);
 
         
@@ -93,7 +99,6 @@ public class MainController {
         theModel.addAttribute("filmTitle", str);
     }
 
-    @GetMapping("/film")
     public String filmPage(){
         return "chosen_film";
     }
