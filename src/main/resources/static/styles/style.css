@@ -153,3 +153,7 @@ h5 span{
 .top-panel {
     position: fixed;
 }
+
+#h1-logo-text {
+    color: white;
+}
